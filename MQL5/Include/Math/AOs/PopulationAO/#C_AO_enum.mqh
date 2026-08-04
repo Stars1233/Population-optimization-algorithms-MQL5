@@ -31,6 +31,7 @@
 #include "AO_TSEA_TurtleShellEvolutionAlgorithm.mqh"
 #include "AO_BSA_BacktrackingSearchAlgorithm.mqh"
 #include "AO_DE_DifferentialEvolution.mqh"
+#include "AO_FDAm_FlowDirectionAlgorithm.mqh"
 #include "AO_SRA_SuccessfulRestaurateurAlgorithm.mqh"
 #include "AO_BO_BonoboOptimizer.mqh"
 #include "AO_CRO_ChemicalReactionOptimisation.mqh"
@@ -165,6 +166,7 @@ enum E_AO
   AO_TSEA,       //TSEA     (Turtle Shell Evolution Algorithm, joo)
   AO_BSA_Backtr, //BSA      (Backtracking Search Algorithm)
   AO_DE,         //DE       (Differential Evolution)
+  AO_FDAm,       //FDAm     (Flow Direction Algorithm M) 
   AO_SRA,        //SRA      (Successful Restaurateur Algorithm, joo)
   AO_BO,         //BO       (Bonobo Optimizer)
   AO_CRO,        //CRO      (Chemical Reaction Optimisation)
@@ -300,6 +302,7 @@ C_AO *SelectAO (E_AO a)
     case  AO_TSEA   : ao = new C_AO_TSEA   (); return (GetPointer (ao));
     case  AO_BSA_Backtr : ao = new C_AO_BSA_Backtracking (); return (GetPointer (ao));
     case  AO_DE     : ao = new C_AO_DE     (); return (GetPointer (ao));
+    case  AO_FDAm   : ao = new C_AO_FDAm   (); return (GetPointer (ao));
     case  AO_SRA    : ao = new C_AO_SRA    (); return (GetPointer (ao));
     case  AO_BO     : ao = new C_AO_BO     (); return (GetPointer (ao));
     case  AO_CRO    : ao = new C_AO_CRO    (); return (GetPointer (ao));
