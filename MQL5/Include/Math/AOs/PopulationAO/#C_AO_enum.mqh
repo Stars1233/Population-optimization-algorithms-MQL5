@@ -75,6 +75,7 @@
 #include "AO_CGO_ChaosGameOptimization.mqh"
 #include "AO_BSO_BeetleSwarmOptimization.mqh"
 #include "AO_ATAm_ArtificialTribeAlgorithm.mqh"
+#include "AO_FDOm_FitnessDependentOptimizer.mqh"
 #include "AO_A3_ArtificialAtomAlgorithm.mqh"
 #include "AO_ECOc_EcologicalCycleOptimizer.mqh"
 #include "AO_CROm_CoralReefsOptimization.mqh"
@@ -166,7 +167,7 @@ enum E_AO
   AO_TSEA,       //TSEA     (Turtle Shell Evolution Algorithm, joo)
   AO_BSA_Backtr, //BSA      (Backtracking Search Algorithm)
   AO_DE,         //DE       (Differential Evolution)
-  AO_FDAm,       //FDAm     (Flow Direction Algorithm M) 
+  AO_FDAm,       //FDAm     (Flow Direction Algorithm M)
   AO_SRA,        //SRA      (Successful Restaurateur Algorithm, joo)
   AO_BO,         //BO       (Bonobo Optimizer)
   AO_CRO,        //CRO      (Chemical Reaction Optimisation)
@@ -210,6 +211,7 @@ enum E_AO
   AO_CGO,        //CGO      (Chaos Game Optimization)
   AO_BSO_Beetle, //BSO      (Beetle Swarm Optimization)
   AO_ATAm,       //ATAm     (Artificial Tribe Algorithm, M)
+  AO_FDOm,       //FDOm     (Fitness Dependent Optimizer M)
   AO_A3,         //A3       (Artificial Atom Algorithm)
   AO_ECOc,       //ECOc     (Ecological cycle optimizer)
   AO_CROm_coral, //CROm     (Coral Reefs Optimization, M)
@@ -346,6 +348,7 @@ C_AO *SelectAO (E_AO a)
     case  AO_CGO    : ao = new C_AO_CGO    (); return (GetPointer (ao));
     case  AO_BSO_Beetle : ao = new C_AO_BSO_Beetle (); return (GetPointer (ao));
     case  AO_ATAm   : ao = new C_AO_ATAm   (); return (GetPointer (ao));
+    case  AO_FDOm   : ao = new C_AO_FDOm   (); return (GetPointer (ao));
     case  AO_A3     : ao = new C_AO_A3     (); return (GetPointer (ao));
     case  AO_ECOc   : ao = new C_AO_ECOc   (); return (GetPointer (ao));
     case  AO_CROm_coral: ao = new C_AO_CROm (); return(GetPointer (ao));
