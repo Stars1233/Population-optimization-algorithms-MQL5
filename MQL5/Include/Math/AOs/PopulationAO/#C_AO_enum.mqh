@@ -14,6 +14,7 @@
 #include "AO_TETA_TimeEvolutionTravelAlgorithm.mqh"
 #include "AO_SDSm_StochasticDiffusionSearch.mqh"
 #include "AO_COA_CoyoteOptimizationAlgorithm.mqh"
+#include "AO_CSBO_CirculatorySystemBasedOptimization.mqh"
 #include "AO_ECBO_EnhancedCollidingBodiesOptimization.mqh"
 #include "AO_BOAm_BilliardsOptimizationAlgorithm.mqh"
 #include "AO_AAm_ArcheryAlgorithm.mqh"
@@ -151,6 +152,7 @@ enum E_AO
   AO_TETA,       //TETA     (Time Evolution Travel Algorithm, joo)
   AO_SDSm,       //SDSm     (Stochastic Diffusion Search, M)
   AO_COA_Coyote, //COA      (Coyote Optimization Algorithm)
+  AO_CSBO,       //CSBO     (Circulatory System Based Optimization)
   AO_ECBO,       //ECBO     (Enhanced Colliding Bodies Optimization)
   AO_BOAm,       //BOAm     (Billiards Optimization Algorithm, M)
   AO_AAm,        //AAm      (Archery Algorithm, M)
@@ -289,6 +291,7 @@ C_AO *SelectAO (E_AO a)
     case  AO_TETA   : ao = new C_AO_TETA   (); return (GetPointer (ao));
     case  AO_SDSm   : ao = new C_AO_SDSm   (); return (GetPointer (ao));
     case  AO_COA_Coyote : ao = new C_AO_COA_Coyote (); return (GetPointer (ao));
+    case  AO_CSBO   : ao = new C_AO_CSBO   (); return (GetPointer (ao));
     case  AO_ECBO   : ao = new C_AO_ECBO   (); return (GetPointer (ao));
     case  AO_BOAm   : ao = new C_AO_BOAm   (); return (GetPointer (ao));
     case  AO_AAm    : ao = new C_AO_AAm    (); return (GetPointer (ao));
